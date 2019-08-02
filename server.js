@@ -16,11 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory to be served
-app.use(express.static("app/public"));
+app.use(express.static("public"));
 
 // Routes
 // =============================================================
-require("./app/routes/api-routes.js")(app);
+require('./routes/apiRoutes')(app);
+require('./routes/htmlRoutes')(app);
 
 // Starts the server to begin listening
 // =============================================================
