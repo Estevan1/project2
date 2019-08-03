@@ -9,7 +9,7 @@ module.exports = function (app) {
         console.log(req.body);
     });
   }
-  // Requiring our Todo model
+  
   var db = require("../models");
   
   // Routes
