@@ -1824,10 +1824,10 @@ input, select, textarea {
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background-color: rgba(144, 144, 144, 0.075);
+		background-color: rgba(247, 244, 244, 0.541);
 		border-radius: 6px;
 		border: none;
-		border: solid 1px #e2eaec;
+		border: solid 1px black;
 		color: inherit;
 		display: block;
 		outline: 0;
