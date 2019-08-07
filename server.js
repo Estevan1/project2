@@ -27,6 +27,8 @@ app.use(express.static("./public"));
 // =============================================================
 require('./routes/apiRoutes.js')(app);
 require('./routes/htmlRoutes.js')(app);
+require('./routes/blog.js')(app);
+require('./routes/cms.js')(app);
 
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
