@@ -28,22 +28,15 @@ app.use(express.static("public"));
 require('./routes/apiRoutes.js')(app);
 require('./routes/htmlRoutes.js')(app);
 
-db.sequelize.sync({ force: true }).then(function () {
-  app.listen(PORT, function () {
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-
-    console.log(db.sitter);
-    
-
-    db.sitter.create({
-      name: 'Ryan',
-      phone: 2036101909,
-      email: "rdkelley@gmail.com",
-      address: '1549 Broadview'
-    })
-  
   });
-
-
-
 });
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
+});
+
+
