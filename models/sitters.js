@@ -9,9 +9,6 @@ module.exports = function (sequelize, DataTypes) {
     phone: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [10],
-      }
 
     },
     email: {

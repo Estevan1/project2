@@ -1,18 +1,15 @@
+var db = require("../models");
 
 module.exports = function (app) {
     app.post('/api/new-sitter', function (req, res) {
-        console.log(req.body);
+        console.log('new-sitter', req.body);
         db.sitter.create({
-            name: req.body.name,
-            phone: req.body.phone,
-            email: req.body.email,
-            address: req.body.address,
+            name: 'Ryan',
+            phone: 4564546,
+            email: 'rdkelley@gmail.com',
+            address: '434',
         })
     });
-
-
-var db = require("../models");
-
 
     // Get route for returning posts of a specific category
     app.get("/api/posts/category/:category", function (req, res) {
@@ -42,9 +39,10 @@ var db = require("../models");
     app.post("/api/posts", function (req, res) {
         console.log(req.body);
         db.Sitter.create({
-            title: req.body.title,
-            body: req.body.body,
-            category: req.body.category
+            name: req.body.name,
+            phone: req.body.phone,
+            email: req.body.email,
+            address: req.body.address,
         })
             .then(function (dbPost) {
                 res.json(dbPost);
@@ -75,11 +73,6 @@ var db = require("../models");
                 res.json(dbPost);
             });
 
-            db.sitter.create({
-                name: 'stacey',
-                phone: 9512058874,
-                email: "staceykdrake@gmail.com",
-                address: '1580 highridge'
-              }); 
+
     });
 }
