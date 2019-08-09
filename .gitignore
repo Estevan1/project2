@@ -1,4 +1,4 @@
 node_modules
 .ds_store
-config.json
+config/config.json
 .env
