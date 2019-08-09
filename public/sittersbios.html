@@ -56,11 +56,13 @@
 				  url: "/api/sitters",
 				  data: post
 				})
-				  .then(function() {
+				  .then(function(response) {
 					window.location.href = "/sittersbios";
-				  
+				  console.log(response.date)
 				  });
 				}
 				  </script>
+
+				  
 	</body>
 </html>

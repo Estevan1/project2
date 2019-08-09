@@ -13,4 +13,7 @@ module.exports = function (app) {
     app.get('/newclients', function(req, res) {
         res.sendFile(path.join(__dirname, "../public/new_client.html"));
     });
+    app.get('/sittersbios', function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/sittersbios.html"));
+    });
 }

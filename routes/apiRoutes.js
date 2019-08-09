@@ -97,7 +97,8 @@ module.exports = function (app) {
             email: req.body.email,
             password: req.body.password,
         }).then(function (err) {
-            res.send(true)
+            // res.send(true)
+            res.redirect("/sittersbios")
         })
     
 
