@@ -156,24 +156,30 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
+		// Get references to client info 
+		const clientName = $("#name");
+		const clientPhone = $("#cell");
+		const clientEmail = $("#email");
+		const clientPassword = $("#password");
+
 		$('#new-client-submit').click(function (e) {
-			e.preventDefault()
+			e.preventDefault();
 			console.log('this works');
 
-			 $.ajax({
-			 	type: "POST",
-			 	url: "/api/new-client",
-			 	data: {
-					name: "stacey drake",
-					phone: 123,
-					email: "stacey@stacey.com",
-		 		password: "123"
+			// Sql table does not contain name or number columns
+			$.ajax({
+				type: "POST",
+				url: "/api/new-client",
+				data: {
+					//name: clientName,
+					//phone: clientPhone,
+					email: clientEmail.val().trim(),
+					password: clientPassword.val().trim()
 
-			 	}
-			 }) .then(function(response)
-			  {
-			console.log(response)	 
-			 })
+				}
+			}).then(function (response) {
+				console.log(response)
+			})
 		})
 	</script>
 </body>

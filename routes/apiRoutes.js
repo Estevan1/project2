@@ -81,11 +81,13 @@ module.exports = function (app) {
     // Second route for clients
     app.post('/api/new-client', function (req, res) {
         console.log('new-client', req.body);
-        console.log();
 
+        //console.log();
+
+        // Sql table does not contain name or number columns
         db.clients.create({
-            name: req.body.name,
-            phone: req.body.phone,
+            //name: req.body.name,
+            //phone: req.body.phone,
             email: req.body.email,
             password: req.body.password,
         }).then(function (err) {
