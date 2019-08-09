@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
 
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
 
     },
@@ -20,7 +20,14 @@ module.exports = function (sequelize, DataTypes) {
     address: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+      
+    },
+
+    bio: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      
+    },
   });
   
   return Sitter;

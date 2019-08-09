@@ -1,5 +1,6 @@
 var db = require("../models");
 
+// route info for new sitters
 module.exports = function (app) {
     app.post('/api/new-sitter', function (req, res) {
         console.log('new-sitter', req.body);
@@ -8,6 +9,7 @@ module.exports = function (app) {
             phone: 4564546,
             email: 'rdkelley@gmail.com',
             address: '434',
+            bio: "i love cats",
         })
     });
 
@@ -43,6 +45,7 @@ module.exports = function (app) {
             phone: req.body.phone,
             email: req.body.email,
             address: req.body.address,
+            bio: req.body.bio,
         })
             .then(function (dbPost) {
                 res.json(dbPost);
@@ -72,6 +75,22 @@ module.exports = function (app) {
             .then(function (dbPost) {
                 res.json(dbPost);
             });
+
+
+    });
+    // Second route for clients
+    app.post('/api/new-client', function (req, res) {
+        console.log('new-client', req.body);
+        console.log();
+
+        db.clients.create({
+            name: req.body.name,
+            phone: req.body.phone,
+            email: req.body.email,
+            password: req.body.password,
+        }).then(function (err) {
+            res.send(true)
+        })
 
 
     });
