@@ -5,13 +5,21 @@ module.exports = function (app) {
     app.post('/api/new-sitter', function (req, res) {
         console.log('new-sitter', req.body);
         db.sitter.create({
-            name: 'Ryan',
-            phone: 4564546,
-            email: 'rdkelley@gmail.com',
-            address: '434',
-            bio: "i love cats",
+            name: req.body.name,
+            phone: req.body.phone,
+            email: req.body.email,
+            address: req.body.address,
+            bio: req.body.bio,
         })
     });
+    app.get("/api/sitters", function(req, res) {
+        db.sitter.findAll({
+          
+        })
+          .then(function(dbSitters) {
+            res.json(dbSitters);
+          });
+      });
 
     // Get route for returning posts of a specific category
     app.get("/api/posts/category/:category", function (req, res) {
@@ -78,7 +86,7 @@ module.exports = function (app) {
 
 
     });
-    // Second route for clients
+    // Second route for new-clients
     app.post('/api/new-client', function (req, res) {
         console.log('new-client', req.body);
         console.log();
@@ -91,7 +99,20 @@ module.exports = function (app) {
         }).then(function (err) {
             res.send(true)
         })
-
+    
 
     });
+    // Get route for retrieving a single post
+ app.get("/api/clients", function(req, res) {
+    db.Clients.findOne({
+      where: {
+        id: req.body.equal
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+
+
+  });
 }
